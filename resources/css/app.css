@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './asset/bootstrap.css';
+@import './asset/fancySelect.css';
+@import './asset/flexslider.css';
+@import './asset/font-awesome.css';
+@import './asset/owl.carousel.css';
+@import './asset/responsive.css';
+@import './asset/style.css';
+
+
+
