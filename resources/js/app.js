@@ -12,6 +12,15 @@ import './asset/jquery.placeholder';
 import './asset/jquery.scrollTo';
 import './asset/main';
 
+
+// Dynamic imports - تحميل الإضافات عند الحاجة
+if (document.querySelector('.flexslider')) {
+    import('./asset/jquery.flexslider');
+}
+
+if (document.querySelector('.nav')) {
+    import('./asset/jquery.nav');
+}
 // Alpine
 import Alpine from 'alpinejs';
 
