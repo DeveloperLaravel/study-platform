@@ -12,7 +12,7 @@ nixPkgs = [
   "php82Extensions.tokenizer",
   "php82Extensions.xml",
   "php82Extensions.fileinfo",
-  "nodejs_20"
+  "nodejs_24"
 ]
 
 [phases.install]
