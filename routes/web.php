@@ -5,7 +5,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
-
+Route::get('/pagedart', [HomeController::class, 'showdart'])->name('pagedart');
+Route::get('/pagephp', [HomeController::class, 'showphp'])->name('pagephp');
+Route::get('/pageunity', [HomeController::class, 'showunity'])->name('pageunity');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

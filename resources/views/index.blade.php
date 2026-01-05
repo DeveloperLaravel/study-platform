@@ -38,23 +38,26 @@
                 [
                     'img' => '3.png',
                     'title' => 'مستقبل تطوير التطبيقات متعددة المنصات',
-                    'desc' => 'Flutter يتيح للمطورين إنشاء تطبيقات وتجربة ممتازة في وقت قياسي.',
+                    'desc' => 'ومفتوح المصدر من Google يُستخدم لتطوير تطبيقات الموبايل، الويب، وسطح المكتب من كود واحد فقط. يعتمد Flutter على لغة Dart،',
+					'route'=>'pagedart',
                 ],
                 [
                     'img' => '2.png',
                     'title' => 'الخيار الأفضل لمطوري PHP',
                     'desc' => 'يوفّر Laravel مجموعة غنية من الأدوات والميزات مثل نظام التوجيه (Routing)، إدارة قواعد البيانات باستخدام Eloquent ORM، الحماية المتقدمة.',
+					'route'=>'pagephp',
                 ],
                 [
                     'img' => '5.png',
                     'title' => 'مدخل إلى تطوير الألعاب باستخدام Unity و C#',
                     'desc' => 'Unity هو محرك ألعاب (Game Engine) قوي يُستخدم لتطوير الألعاب والتطبيقات التفاعلية ثنائية وثلاثية الأبعاد، ويعمل على عدة منصات.',
+					'route'=>'pageunity',
                 ],
             ];
         @endphp
 
         @foreach($features as $feature)
-        <a href="#"
+        <a href="{{ route($feature['route'] ) }}"
             :class="dark ? 'bg-gray-700 text-yellow-300' : 'bg-gradient-to-br from-green-100 to-blue-100 text-gray-900'"
             class="group p-6 sm:p-8 rounded-2xl shadow-lg transform transition duration-500 hover:-translate-y-2 hover:scale-105 flex flex-col">
 
