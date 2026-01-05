@@ -17,11 +17,7 @@
 		<link href="{{ asset('asset/css/responsive.css') }}" rel="stylesheet" media="screen"> --}}
 
 		<!--== Google Fonts ==-->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-     <!-- Styles / Scripts -->
+		     <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -734,7 +730,6 @@
 
 
 		<!--== Javascript Files ==-->
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		{{-- 
 		<script src="{{ asset('asset/js/jquery-2.1.0.min.js') }}"></script>
 		<script src="{{ asset('asset/js/bootstrap.min.js') }}"></script>
@@ -748,19 +743,6 @@
 		<script src="{{ asset('asset/js/fancySelect.js') }}"></script>
 		<script src="{{ asset('asset/js/owl.carousel.min.js') }}"></script>
 		<script src="{{ asset('asset/js/main.js') }}"></script> --}}
-		<script type="text/javascript"> 
-
-		$(document).ready(function() {
- 
-		  $("#testimonial-container").owlCarousel({
-		 
-		      navigation : false, // Show next and prev buttons
-		      slideSpeed : 700,
-		      paginationSpeed : 400,
-		      singleItem:true,
-		  });
- 
-		});
-		</script>
+	
 	</body>
 </html>

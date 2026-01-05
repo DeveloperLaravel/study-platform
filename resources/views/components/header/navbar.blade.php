@@ -13,7 +13,7 @@
 
 								<!--== Logo ==-->
 								<span class="navbar-brand logo">
-									Evento
+								<img src="{{asset('images/1.png')}}"   alt="Slide"/>
 								</span>
 
 							</div>
@@ -21,14 +21,14 @@
 
 								<!--== Navigation Menu ==-->
 								<ul class="nav navbar-nav">
-									<li class="current"><a href="#header">Home</a></li>
-									<li><a href="#about">About us</a></li>
-									<li><a href="#schedule">Schedule</a></li>
-									<li><a href="#blog">Blog</a></li>
-									<li><a href="#prices">Pricing</a></li>
-									<li><a href="#team">Our Team</a></li>
-									<li><a href="#testimonial">Testimonials</a></li>
-									<li><a href="#contact">Contact</a></li>
+									<li class="current"><a href="#header">الرئيسية</a></li>
+									<li><a href="#about">الدورات</a></li>
+									<li><a href="#schedule">الدروس</a></li>
+									<li><a href="#blog">المقالات</a></li>
+									<li><a href="#prices">المكتبة</a></li>
+									<li><a href="#team">الاختبارات </a></li>
+									<li><a href="#testimonial">الأسئلة الشائعة</a></li>
+									<li><a href="#contact">تواصل معنا</a></li>
 								</ul>
 							</div>
 						</nav>

@@ -4,24 +4,51 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-{{-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' https://jalo.up.railway.app;"> --}}
 
         <title>{{ $title ?? 'مشروعي' }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head id="header">
     <body>
-                        
-	<div class="content">
-			<div class="container box">
+   
     {{ $slot }}
-            </div>
-    </div>
+        
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    	<script type="text/javascript"> 
+
+		$(document).ready(function() {
+ 
+		  $("#testimonial-container").owlCarousel({
+		 
+		      navigation : false, // Show next and prev buttons
+		      slideSpeed : 700,
+		      paginationSpeed : 400,
+		      singleItem:true,
+		  });
+ 
+		});
+		</script>	<script type="text/javascript"> 
+
+		$(document).ready(function() {
+ 
+		  $("#testimonial-container").owlCarousel({
+		 
+		      navigation : false, // Show next and prev buttons
+		      slideSpeed : 700,
+		      paginationSpeed : 400,
+		      singleItem:true,
+		  });
+ 
+		});
+		</script>
     
     </body>
 </html>
