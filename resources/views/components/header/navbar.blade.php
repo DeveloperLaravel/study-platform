@@ -1,66 +1,58 @@
-	<header id="header">
-			<div id="menu" class="header-menu fixed">
-				<div class="box">
-					<div class="row">
-						<nav role="navigation" class="col-sm-12">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
+<nav x-data="{ open: false }"
+     class="relative z-20 transition-colors duration-500"
+     :class="dark ? 'bg-gray-800 bg-opacity-90 backdrop-blur-md shadow-lg text-yellow-300' : 'bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg'">
 
-								<!--== Logo ==-->
-								<span class="navbar-brand logo">
-								<img src="{{asset('images/1.png')}}"   alt="Slide"/>
-								</span>
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
 
-							</div>
-							<div class="navbar-collapse collapse">
+            {{-- Logo --}}
+			<img src="images/1.png" width="60" height="80"  alt="" srcset="">
 
-								<!--== Navigation Menu ==-->
-								<ul class="nav navbar-nav">
-									<li class="current"><a href="#header">الرئيسية</a></li>
-									<li><a href="#about">الدورات</a></li>
-									<li><a href="#schedule">الدروس</a></li>
-									<li><a href="#blog">المقالات</a></li>
-									<li><a href="#prices">المكتبة</a></li>
-									<li><a href="#team">الاختبارات </a></li>
-									<li><a href="#testimonial">الأسئلة الشائعة</a></li>
-									<li><a href="#contact">تواصل معنا</a></li>
-								</ul>
-							</div>
-						</nav>
+            {{-- Desktop Links --}}
+            <div class="hidden md:flex space-x-6 rtl:space-x-reverse">
+                @foreach(['الرئيسية','الدروس','المسارات','تواصل معنا'] as $link)
+                    <a href="#" class="transition hover:text-yellow-300 dark:text-yellow-300 dark:hover:text-white">
+                        {{ $link }}
+                    </a>
+                @endforeach
+            </div>
+
+            {{-- Actions --}}
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+
+
+                {{-- Dark / Light Toggle --}}
+                <button @click="dark = !dark"
+                        class="relative w-16 h-8 rounded-full p-1 flex items-center transition-all duration-500 shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:scale-105"
+                        :class="dark ? 'bg-gray-700' : 'bg-yellow-400'">
+                    <span x-show="!dark" class="absolute left-1 w-6 h-6 bg-white rounded-full flex items-center justify-center text-yellow-500">🌙</span>
+                    <span x-show="dark" class="absolute right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center text-yellow-400">☀️</span>
+                    <div :class="dark ? 'translate-x-7 bg-yellow-400' : 'translate-x-0 bg-white'" class="w-6 h-6 rounded-full transition-transform duration-500 shadow-inner">
+						
 					</div>
-				</div>
-			</div>
+                </button>
 
-			<!--== Site Description ==-->
-			<div class="header-cta">
-				<div class="container">
-					<div class="row">
-						<div class="entry-content">
-				            <p><span class="start-text"><b>From THE MARCH 7, 2014</b></span></p>
-				            <h4 class="entry-title"><a href="#">Organizing World class events</a></h4>
-				            <h5><span><b>Schrodinger confirms that Germany international ...</b></span></h5>
-					    </div>
-					</div>
-				</div>
-			</div>
+                {{-- Mobile Menu --}}
+                <button @click="open = !open"
+                        class="md:hidden w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-yellow-400 hover:scale-110 transition-transform shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <span x-show="!open" class="text-2xl">☰</span>
+                    <span x-show="open" class="text-2xl">✖</span>
+					
+                </button>
+            </div>
+        </div>
 
-			<div class="header-bg">
-				<div id="preloader">
-					<div class="preloader"></div>
-				</div>
-				<div class="main-slider" id="main-slider">
 
-					<!--== Main Slider ==-->
-					<ul class="slides">
-						<li><img src="{{asset('images/bg-slide-01.jpg')}}" alt="Slide Image"/></li>
-						<li><img src="{{asset('images/bg-slide-02.jpg')}}" alt="Slide Image 2"/></li>
-					</ul>
 
-				</div>
-			</div>
-		</header>
+        {{-- Mobile Menu --}}
+        <div x-show="open" x-transition class="md:hidden mt-2 space-y-2">
+            @foreach(['الرئيسية','الدروس','المسارات','تواصل معنا'] as $link)
+                <a href="#"
+                   class="block px-4 py-2 rounded-lg transition hover:bg-gray-600 dark:hover:bg-gray-500"
+                   :class="dark ? 'bg-gray-700 text-yellow-300' : 'bg-green-100 text-gray-900 hover:bg-green-200'">
+                    {{ $link }}
+                </a>
+            @endforeach
+        </div>
+    </div>
+</nav>

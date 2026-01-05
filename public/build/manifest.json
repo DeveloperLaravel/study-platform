@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-rpilln7e.css",
+    "file": "assets/app-BOj7U2EK.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -8,50 +8,13 @@
       "app.css"
     ]
   },
-  "resources/css/asset/fonts/flexslider-icon-2.html": {
-    "file": "assets/flexslider-icon-2-DcICXtsF.html",
-    "src": "resources/css/asset/fonts/flexslider-icon-2.html"
-  },
-  "resources/css/asset/fonts/flexslider-icon-3.html": {
-    "file": "assets/flexslider-icon-3-5B4Wc-Rb.html",
-    "src": "resources/css/asset/fonts/flexslider-icon-3.html"
-  },
-  "resources/css/asset/fonts/flexslider-icon-4.html": {
-    "file": "assets/flexslider-icon-4-BeHaRtIv.html",
-    "src": "resources/css/asset/fonts/flexslider-icon-4.html"
-  },
-  "resources/css/asset/fonts/flexslider-icon.html": {
-    "file": "assets/flexslider-icon-CnCyirXv.html",
-    "src": "resources/css/asset/fonts/flexslider-icon.html"
-  },
-  "resources/css/asset/fonts/flexslider-icond41d.html": {
-    "file": "assets/flexslider-icon-CnCyirXv.html",
-    "src": "resources/css/asset/fonts/flexslider-icon.html"
-  },
-  "resources/css/asset/fonts/fontawesome-webfontba72.eot": {
-    "file": "assets/fontawesome-webfontba72-DZZNeuAi.eot",
-    "src": "resources/css/asset/fonts/fontawesome-webfontba72.eot"
-  },
-  "resources/css/asset/fonts/fontawesome-webfontba72.svg": {
-    "file": "assets/fontawesome-webfontba72-DINy9hJ8.svg",
-    "src": "resources/css/asset/fonts/fontawesome-webfontba72.svg"
-  },
-  "resources/css/asset/fonts/fontawesome-webfontba72.ttf": {
-    "file": "assets/fontawesome-webfontba72-DgQ5z64Z.ttf",
-    "src": "resources/css/asset/fonts/fontawesome-webfontba72.ttf"
-  },
-  "resources/css/asset/fonts/fontawesome-webfontba72.woff": {
-    "file": "assets/fontawesome-webfontba72-CSn1GHZU.woff",
-    "src": "resources/css/asset/fonts/fontawesome-webfontba72.woff"
-  },
-  "resources/css/asset/fonts/fontawesome-webfontd41d.eot": {
-    "file": "assets/fontawesome-webfontba72-DZZNeuAi.eot",
-    "src": "resources/css/asset/fonts/fontawesome-webfontba72.eot"
-  },
   "resources/js/app.js": {
-    "file": "assets/app-CGpLyQMA.js",
+    "file": "assets/app-QJ7pfylC.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "css": [
+      "assets/app-BOj7U2EK.css"
+    ]
   }
 }

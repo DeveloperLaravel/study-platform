@@ -1,54 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ $title ?? 'Laravel Study' }}</title>
 
-        <title>{{ $title ?? 'مشروعي' }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Fonts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body x-data="{ dark: false }"
+      x-init="
+        dark = localStorage.getItem('theme') === 'dark';
+        $watch('dark', val => {
+            document.documentElement.classList.toggle('dark', val);
+            localStorage.setItem('theme', val ? 'dark' : 'light');
+        });
+      "
+      :class="dark ? 'dark' : ''"
+      class="transition-colors duration-500 bg-white text-gray-900 dark:bg-gray-900 dark:text-yellow-300">
 
-        <!-- Scripts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    {{-- Navbar --}}
+    <x-header.navbar />
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head id="header">
-    <body>
-   
-    {{ $slot }}
-        
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    	<script type="text/javascript"> 
+    {{-- Main Content --}}
+    <main class="transition-colors duration-500">
+        {{ $slot }}
+    </main>
 
-		$(document).ready(function() {
- 
-		  $("#testimonial-container").owlCarousel({
-		 
-		      navigation : false, // Show next and prev buttons
-		      slideSpeed : 700,
-		      paginationSpeed : 400,
-		      singleItem:true,
-		  });
- 
-		});
-		</script>	<script type="text/javascript"> 
+    {{-- Footer --}}
+    <x-header.footer />
 
-		$(document).ready(function() {
- 
-		  $("#testimonial-container").owlCarousel({
-		 
-		      navigation : false, // Show next and prev buttons
-		      slideSpeed : 700,
-		      paginationSpeed : 400,
-		      singleItem:true,
-		  });
- 
-		});
-		</script>
-    
-    </body>
+</body>
 </html>

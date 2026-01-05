@@ -119,12 +119,6 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('home', compact(
-            'events',
-            'posts',
-            'plans',
-            'team',
-            'testimonials'
-        ));
+        return view('index');
     }
 }
