@@ -17,12 +17,12 @@
         </p> 
 
         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-            <a href="#" 
+            <a href="{{ route('pagetest') }}" 
                 :class="dark ? 'bg-yellow-400 text-gray-900 hover:bg-yellow-300' : 'bg-green-600 text-white hover:bg-green-700'" 
                 class="px-6 sm:px-8 py-3 rounded-full shadow-lg text-lg sm:text-xl transition transform hover:scale-105">
                 ابدأ التعلم
             </a>
-            <a href="#" 
+            <a href="{{ route('register') }}" 
                 :class="dark ? 'border-yellow-400 text-yellow-300 hover:bg-gray-700' : 'border-blue-600 text-blue-600 hover:bg-blue-100'" 
                 class="px-6 sm:px-8 py-3 border-2 rounded-full shadow-lg text-lg sm:text-xl transition transform hover:scale-105">
                 تسجيل مستخدم

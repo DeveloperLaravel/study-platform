@@ -8,6 +8,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/pagedart', [HomeController::class, 'showdart'])->name('pagedart');
 Route::get('/pagephp', [HomeController::class, 'showphp'])->name('pagephp');
 Route::get('/pageunity', [HomeController::class, 'showunity'])->name('pageunity');
+Route::get('/pagetest', [HomeController::class, 'showunity'])->name('pagetest');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
