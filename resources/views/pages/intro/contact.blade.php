@@ -35,7 +35,7 @@
             <ul class="space-y-6 text-base sm:text-lg transition-colors duration-500">
                 <li class="flex items-center gap-4">
                     <span>📧</span>
-                    <span>contact@example.com</span>
+                    <span>hnarfr20063@gmail.com</span>
                 </li>
 
                 <li class="flex items-center gap-4">
@@ -51,7 +51,7 @@
 
 
 
-            
+
 
             <p class="mt-8 leading-relaxed transition-colors duration-500">
                 نؤمن بأن التواصل هو الخطوة الأولى نحو بناء شيء مميز،
