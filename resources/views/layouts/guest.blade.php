@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-<body class="font-sans bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center">
+<body dir="rtl" class="font-sans bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center">
                 {{ $slot }}
     </body>
 </html>
