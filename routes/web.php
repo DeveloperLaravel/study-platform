@@ -5,6 +5,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/lessons', [HomeController::class, 'lessons'])->name('lessons');
+Route::get('/tracks', [HomeController::class, 'tracks'])->name('tracks');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/pagedart', [HomeController::class, 'showdart'])->name('pagedart');
 Route::get('/pagephp', [HomeController::class, 'showphp'])->name('pagephp');
 Route::get('/pageunity', [HomeController::class, 'showunity'])->name('pageunity');

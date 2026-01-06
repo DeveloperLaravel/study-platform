@@ -16,6 +16,34 @@ class HomeController extends Controller
 
     }
 
+    public function home()
+    {
+        // return view('pages.dart.home');
+        return view('welcome');
+
+    }
+
+    public function lessons()
+    {
+        // return view('pages.dart.home');
+        return view('welcome');
+
+    }
+
+    public function tracks()
+    {
+        // return view('pages.dart.home');
+        return view('welcome');
+
+    }
+
+    public function contact()
+    {
+        // return view('pages.dart.home');
+        return view('welcome');
+
+    }
+
     public function showphp()
     {
         // return view('pages.php.home');

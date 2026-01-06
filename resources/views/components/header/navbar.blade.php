@@ -1,3 +1,12 @@
+  @php
+        $navLinks = [
+            ['title' => 'الرئيسية', 'route' => 'home'],
+            ['title' => 'الدروس', 'route' => 'lessons'],
+            ['title' => 'المسارات', 'route' => 'tracks'],
+            ['title' => 'تواصل معنا', 'route' => 'contact'],
+        ];
+    @endphp
+
 <nav x-data="{ open: false }"
      class="relative z-20 transition-colors duration-500"
      :class="dark ? 'bg-gray-800 bg-opacity-90 backdrop-blur-md shadow-lg text-yellow-300' : 'bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg'">
@@ -10,12 +19,14 @@
 
             {{-- Desktop Links --}}
             <div class="hidden md:flex space-x-6 rtl:space-x-reverse">
-                @foreach(['الرئيسية','الدروس','المسارات','تواصل معنا'] as $link)
-                    <a href="#" class="transition hover:text-yellow-300 dark:text-yellow-300 dark:hover:text-white">
-                        {{ $link }}
-                    </a>
-                @endforeach
-            </div>
+  
+    @foreach($navLinks as $link)
+        <a href="{{ route($link['route']) }}"
+           class="transition hover:text-yellow-300 dark:text-yellow-300 dark:hover:text-white">
+            {{ $link['title'] }}
+        </a>
+    @endforeach
+</div>
 
             {{-- Actions --}}
             <div class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -44,15 +55,24 @@
 
 
 
-        {{-- Mobile Menu --}}
-        <div x-show="open" x-transition class="md:hidden mt-2 space-y-2">
-            @foreach(['الرئيسية','الدروس','المسارات','تواصل معنا'] as $link)
-                <a href="#"
-                   class="block px-4 py-2 rounded-lg transition hover:bg-gray-600 dark:hover:bg-gray-500"
-                   :class="dark ? 'bg-gray-700 text-yellow-300' : 'bg-green-100 text-gray-900 hover:bg-green-200'">
-                    {{ $link }}
-                </a>
-            @endforeach
-        </div>
+          {{-- Mobile Menu --}}
+    <div x-show="open" x-transition @click.outside="open = false"
+         class="md:hidden px-4 pb-4 space-y-2">
+
+        @foreach($navLinks as $link)
+            <a href="{{ route($link['route']) }}"
+               class="
+                   block px-4 py-2 rounded-lg transition
+                   {{ request()->routeIs($link['route'])
+                        ? 'bg-yellow-400 text-black font-bold'
+                        : 'bg-green-100 text-gray-900 hover:bg-green-200
+                           dark:bg-gray-700 dark:text-yellow-300 dark:hover:bg-gray-600'
+                   }}
+               ">
+                {{ $link['title'] }}
+            </a>
+        @endforeach
+
+    </div>
     </div>
 </nav>
