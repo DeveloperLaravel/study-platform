@@ -40,7 +40,7 @@ class HomeController extends Controller
     public function contact()
     {
         // return view('pages.dart.home');
-        return view('welcome');
+        return view('pages.intro.contact');
 
     }
 
