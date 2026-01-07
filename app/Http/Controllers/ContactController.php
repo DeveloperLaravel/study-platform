@@ -13,6 +13,7 @@ class ContactController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'subject' => 'required|string',
+            'message' => 'required|string|max:1000',
         ]);
 
         Mail::send('pages.intro.contact', $data, function ($mail) use ($data) {

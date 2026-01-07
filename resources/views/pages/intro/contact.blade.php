@@ -96,6 +96,21 @@
         @enderror
     </div>
 
+
+     {{-- الاسم --}}
+    <div>
+        <label class="block mb-2">المقترح</label>
+        <input type="text" name="message" value="{{ old('message') }}"
+            :class="dark
+                ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
+                : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
+            placeholder="عنوان النص"
+            class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500">
+        @error('name')
+            <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+        @enderror
+    </div>
+
     {{-- الرسالة --}}
     <div>
         <label class="block mb-2">الرسالة</label>
