@@ -3,35 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Resend as GlobalResend;
 
 class ContactController extends Controller
 {
     public function send(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string',
+            'name' => 'required|string|max:100',
             'email' => 'required|email',
-            'subject' => 'required|string',
-            'message' => 'required|string|max:1000',
+            'subject' => 'required|string|max:150',
+            'message' => 'required|string|max:2000',
         ]);
 
         try {
-            Mail::send('pages.intro.contact', $data, function ($mail) use ($data) {
-                $mail->to('hnarfr20063@gmail.com')
-                    ->subject($data['subject'])
-                    ->replyTo($data['email'], $data['name']);
-            });
+            $resend = GlobalResend::client(config('services.resend.key'));
 
-            return back()->with('success', 'تم إرسال رسالتك بنجاح');
+            $resend->emails->send([
+                'from' => config('app.name').' <onboarding@resend.dev>',
+                'to' => ['hnarfr20063@gmail.com'],
+                'subject' => $data['subject'],
+                'reply_to' => $data['email'],
+                'html' => view('pages.intro.contact', $data)->render(),
+            ]);
 
-        } catch (\Exception $e) {
+            return back()->with('success', 'تم إرسال رسالتك بنجاح ✅');
 
-            // حفظ الخطأ في اللوق
-            return back()->with('error', $e->getMessage());
-
-            // return back()->with('error', 'حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.');
+        } catch (\Throwable $e) {
+            return back()->with('error', 'فشل إرسال الرسالة ❌');
         }
-
     }
 }
