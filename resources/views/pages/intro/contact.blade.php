@@ -48,11 +48,6 @@
                     <span>ليبيا – الواحات/جالو</span>
                 </li>
             </ul>
-
-
-
-
-
             <p class="mt-8 leading-relaxed transition-colors duration-500">
                 نؤمن بأن التواصل هو الخطوة الأولى نحو بناء شيء مميز،
                 لا تتردد في مراسلتنا وسنرد عليك في أقرب وقت ممكن.
@@ -70,50 +65,79 @@
                 أرسل رسالة
             </h2>
 
-            <form method="POST" action="#" class="space-y-5">
-                @csrf
+            <form method="POST" action="{{ route('contact') }}" class="space-y-5">
+    @csrf
 
-                <div>
-                    <label class="block mb-2">الاسم</label>
-                    <input type="text"
-                        :class="dark
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
-                            : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
-                        placeholder="ادخل اسمك"
-                        class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500">
-                </div>
+    {{-- الاسم --}}
+    <div>
+        <label class="block mb-2">الاسم</label>
+        <input type="text" name="name" value="{{ old('name') }}"
+            :class="dark
+                ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
+                : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
+            placeholder="ادخل اسمك"
+            class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500">
+        @error('name')
+            <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+        @enderror
+    </div>
 
-                <div>
-                    <label class="block mb-2">البريد الإلكتروني</label>
-                    <input type="email"
-                        :class="dark
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
-                            : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
-                        placeholder="example@mail.com"
-                        class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500">
-                </div>
+    {{-- البريد الإلكتروني --}}
+    <div>
+        <label class="block mb-2">البريد الإلكتروني</label>
+        <input type="email" name="email" value="{{ old('email') }}"
+            :class="dark
+                ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
+                : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
+            placeholder="example@mail.com"
+            class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500">
+        @error('email')
+            <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+        @enderror
+    </div>
 
-                <div>
-                    <label class="block mb-2">الرسالة</label>
-                    <textarea rows="5"
-                        :class="dark
-                            ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
-                            : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
-                        placeholder="اكتب رسالتك هنا..."
-                        class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500"></textarea>
-                </div>
+    {{-- الرسالة --}}
+    <div>
+        <label class="block mb-2">الرسالة</label>
+        <textarea name="subject" rows="5" placeholder="اكتب رسالتك هنا..." 
+            :class="dark
+                ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-300 focus:ring-yellow-400'
+                : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-green-400'"
+            class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition-colors duration-500">{{ old('subject') }}</textarea>
+        @error('subject')
+            <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+        @enderror
+    </div>
 
-                <button
-                    :class="dark
-                        ? 'bg-yellow-400 hover:bg-yellow-300 text-gray-900'
-                        : 'bg-green-600 hover:bg-green-700 text-white'"
-                    class="w-full py-3 rounded-full text-lg font-bold transition transform hover:scale-105">
-                    إرسال الرسالة
-                </button>
-            </form>
+    {{-- زر الإرسال --}}
+    <button type="submit"
+        :class="dark
+            ? 'bg-yellow-400 hover:bg-yellow-300 text-gray-900'
+            : 'bg-green-600 hover:bg-green-700 text-white'"
+        class="w-full py-3 rounded-full text-lg font-bold transition transform hover:scale-105">
+        إرسال الرسالة
+    </button>
+</form>
+
+
         </div>
 
     </div>
 </section>
 
+{{-- SweetAlert للنجاح --}}
+           
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'نجاح!',
+        text: '{{ session('success') }}',
+        timer: 3000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    });
+</script>
+@endif
 </x-app-layout>
