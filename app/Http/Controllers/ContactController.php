@@ -19,7 +19,7 @@ class ContactController extends Controller
         try {
             Mail::send('pages.intro.contact', $data, function ($mail) use ($data) {
                 $mail->to('hnarfr20063@gmail.com')
-                    ->subject('رسالة جديدة من صفحة التواصل')
+                    ->subject($data['subject'])
                     ->replyTo($data['email'], $data['name']);
             });
 
