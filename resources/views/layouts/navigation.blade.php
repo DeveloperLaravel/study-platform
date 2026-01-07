@@ -1,15 +1,5 @@
 
 {{-- Page Container --}}
-<div x-data="{ dark: false, open: false }"
-     x-init="
-        dark = localStorage.getItem('theme') === 'dark';
-        $watch('dark', val => {
-            document.documentElement.classList.toggle('dark', val);
-            localStorage.setItem('theme', val ? 'dark' : 'light');
-        });
-     "
-     :class="dark ? 'dark' : ''"
-     class="relative min-h-screen transition-colors duration-500">
 
     {{-- Night Sky Background --}}
     <div x-show="dark" class="fixed inset-0 bg-gray-900 overflow-hidden z-0">

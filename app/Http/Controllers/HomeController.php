@@ -33,7 +33,7 @@ class HomeController extends Controller
     public function tracks()
     {
         // return view('pages.dart.home');
-        return view('welcome');
+        return view('pages.intro.tracks');
 
     }
 
