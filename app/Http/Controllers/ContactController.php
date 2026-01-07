@@ -16,12 +16,22 @@ class ContactController extends Controller
             'message' => 'required|string|max:1000',
         ]);
 
-        Mail::send('pages.intro.contact', $data, function ($mail) use ($data) {
-            $mail->to('hnarfr20063@gmail.com')
-                ->subject($data['subject'])
-                ->replyTo($data['email'], $data['name']);
-        });
+        try {
+            Mail::send('pages.intro.contact', $data, function ($mail) use ($data) {
+                $mail->to('hnarfr20063@gmail.com')
+                    ->subject('رسالة جديدة من صفحة التواصل')
+                    ->replyTo($data['email'], $data['name']);
+            });
 
-        return back()->with('success', 'تم إرسال رسالتك بنجاح');
+            return back()->with('success', 'تم إرسال رسالتك بنجاح');
+
+        } catch (\Exception $e) {
+
+            // حفظ الخطأ في اللوق
+            return back()->with('error', $e->getMessage());
+
+            // return back()->with('error', 'حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.');
+        }
+
     }
 }
