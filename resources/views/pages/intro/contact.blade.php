@@ -65,7 +65,7 @@
                 أرسل رسالة
             </h2>
 
-            <form method="POST" action="{{ route('contact') }}" class="space-y-5">
+            <form method="POST" action="{{ route('contact.send') }}" class="space-y-5">
     @csrf
 
     {{-- الاسم --}}
