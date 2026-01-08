@@ -65,9 +65,9 @@
 </section>
 
 {{-- Features Section --}}
-<section class="relative max-w-7xl mx-auto
-               px-4 sm:px-6 lg:px-16
-               py-16 sm:py-20 md:py-28">
+<section class="py-16 px-4 sm:px-6 lg:px-16 transition-colors duration-700
+               bg-gradient-to-br from-green-100 via-blue-100 to-purple-100
+               dark:bg-gray-900">
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
 
