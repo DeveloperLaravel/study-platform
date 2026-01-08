@@ -23,25 +23,11 @@
                bg-gradient-to-br from-green-100 via-blue-100 to-purple-100
                dark:bg-gray-900">
 
-    {{-- Background Decoration --}}
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-32 -right-32 w-96 h-96 bg-purple-300/30 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-green-300/30 rounded-full blur-3xl"></div>
-    </div>
+   
 
     <div class="relative max-w-7xl mx-auto">
 
-        {{-- Header --}}
-        <div class="text-center mb-16">
-            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4
-                       text-gray-900 dark:text-yellow-300">
-            </h1>              
-
-
-            <p class="max-w-3xl mx-auto text-lg text-gray-700 dark:text-gray-300">
-            
-            </p>
-        </div>
+      
 
         {{-- Lessons Grid --}}
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
