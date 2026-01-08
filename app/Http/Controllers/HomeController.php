@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function lessons()
     {
         // return view('pages.dart.home');
-        return view('welcome');
+        return view('pages.intro.lessons');
 
     }
 
