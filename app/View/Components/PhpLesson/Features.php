@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Hero;
+namespace App\View\Components\PhpLesson;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FeatureCard extends Component
+class Features extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class FeatureCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.hero.feature--card');
+        return view('components.php-lesson.features');
     }
 }

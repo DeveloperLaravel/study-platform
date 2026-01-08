@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function showdart()
     {
         // return view('pages.dart.home');
-        return view('welcome');
+        return view('pages.dart.home');
 
     }
 
@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function showphp()
     {
         // return view('pages.php.home');
-        return view('welcome');
+        return view('pages.php.home');
 
     }
 

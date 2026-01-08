@@ -4,7 +4,7 @@
             'title' => 'مقدمة في Laravel',
             'desc'  => 'تعرف على أساسيات Laravel وبنية المشروع.',
             'icon'  => '🧱',
-            'route' => 'lessons',
+            'route' => 'pagephp',
             'color' => 'from-red-500 to-orange-500',
         ],
         [
@@ -25,21 +25,21 @@
             'title' => 'Dart Basics',
             'desc'  => 'الأساسيات المهمة للغة Dart.',
             'icon'  => '🎯',
-            'route' => 'lessons',
+            'route' => 'pagedart',
             'color' => 'from-cyan-500 to-blue-500',
         ],
         [
             'title' => 'Flutter UI',
             'desc'  => 'تصميم واجهات جميلة باستخدام Flutter.',
             'icon'  => '📱',
-            'route' => 'lessons',
+            'route' => 'pagedart',
             'color' => 'from-purple-500 to-pink-500',
         ],
         [
             'title' => 'Bloc & State Management',
             'desc'  => 'إدارة الحالة بطريقة احترافية.',
             'icon'  => '⚙️',
-            'route' => 'lessons',
+            'route' => 'pagedart',
             'color' => 'from-yellow-500 to-orange-500',
         ],
     ];
