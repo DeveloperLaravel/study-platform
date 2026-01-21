@@ -8,6 +8,11 @@ class HomeController extends Controller
     {
         return view('index');
     }
+      public function Sanctum()
+    {
+        return view('pages.php.sanctum');
+    }
+
 
     public function showdart()
     {

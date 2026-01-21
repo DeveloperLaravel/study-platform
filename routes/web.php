@@ -11,6 +11,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+Route::get('/Sanctum', [HomeController::class, 'Sanctum'])->name('Sanctum');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/lessons', [HomeController::class, 'lessons'])->name('lessons');

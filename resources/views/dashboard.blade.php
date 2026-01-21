@@ -30,7 +30,7 @@
                     'title' => 'Laravel Sanctum',
                     'desc'  => 'نظام تسجيل الدخول والحماية باستخدام API Tokens.',
                     'icon'  => '🔐',
-                    'route' => 'lessons',
+                    'route' => 'Sanctum',
                     'color' => 'from-green-500 to-emerald-500',
                 ],
                 [
