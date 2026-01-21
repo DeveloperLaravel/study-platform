@@ -6,6 +6,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/lessons', [HomeController::class, 'lessons'])->name('lessons');
@@ -16,9 +21,7 @@ Route::get('/pagedart', [HomeController::class, 'showdart'])->name('pagedart');
 Route::get('/pagephp', [HomeController::class, 'showphp'])->name('pagephp');
 Route::get('/pageunity', [HomeController::class, 'showunity'])->name('pageunity');
 Route::get('/pagetest', [HomeController::class, 'showunity'])->name('pagetest');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

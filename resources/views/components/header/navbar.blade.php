@@ -15,7 +15,9 @@
         <div class="flex justify-between items-center h-16">
 
             {{-- Logo --}}
+            <a href="{{ route('dashboard') }}">
 			<img src="images/1.png" width="60" height="80"  alt="" srcset="">
+            </a>
 
             {{-- Desktop Links --}}
             <div class="hidden md:flex space-x-6 rtl:space-x-reverse">
